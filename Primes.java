@@ -27,6 +27,7 @@ public class Primes {
                 System.out.println(i);
             }
         }
-        System.out.println("There are " + count + "primes between 2 and " + p +" (" +((double)count/(double)p)*100 + "% are primes)");
+        int ahus = (int) Math.round((count * 100.0) / p);
+        System.out.println("There are " + count + " primes between 2 and " + p + " (" + ahus + "% are primes)");
     }
 }

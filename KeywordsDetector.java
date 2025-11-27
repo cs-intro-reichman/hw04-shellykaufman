@@ -25,14 +25,13 @@ public class KeywordsDetector {
             for(int i = 0; i < sentences.length; i++){
                 String sentenceI = (String) sentences[i];
                 sentences[i] = sentences[i].toLowerCase();
+                boolean isin = false;
                 for(int j = 0; j < keywords.length; j++){
                     keywords[j] = keywords[j].toLowerCase();
                     if(sentences[i].contains(keywords[j])) {
                         System.out.println(sentenceI);
-                    }  
-                    else{
                         break;
-                    }
+                    }  
                 }
             }
         }

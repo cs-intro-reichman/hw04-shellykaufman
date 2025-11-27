@@ -99,19 +99,18 @@ public class ArrCharOps {
     /* Returns an array which is the concatanation of the two given arrays.
     */
     public static char[] concat(char[] arr1, char[] arr2) {
-        if(!(arr1 == null || arr2 == null)){
-            char[] union = new char[arr1.length + arr2.length];
-            for(int i = 0; i < union.length; i++)
-                if(i < arr1.length){
-                    union[i] = arr1[i];
-                }
-                else{
-                    union[i] = arr2[i];
-                }
-            return union;
+        
+        char[] union = new char[arr1.length + arr2.length];
+        for(int i = 0; i < union.length; i++){
+            if(i < arr1.length){
+                union[i] = arr1[i];
+            }
         }
-        return null;
-    }
+        for(int j = arr1.length; j < (arr1.length + arr2.length); j++) {
+                union[j] = arr2[j - arr1.length];
+        }
+        return union;
+    }ד
 
     /** Returns a new array that can be described as a sub-array of this array.
      *  The sub-array begins at the specified beginIndex and extends to the character at index endIndex - 1.
@@ -173,6 +172,9 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
+        if(str1 == null || str2 == null || str1.length() == 0 || str2.length() == 0){
+            return -2;
+        }
         int minStrLength = Math.min(str1.length(), str2.length());
         for(int i = 0; i < minStrLength; i++){
             if(str1.charAt(i) < str2.charAt(i)){

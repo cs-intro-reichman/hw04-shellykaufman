@@ -99,7 +99,7 @@ public class ArrCharOps {
     /* Returns an array which is the concatanation of the two given arrays.
     */
     public static char[] concat(char[] arr1, char[] arr2) {
-        if(arr1 == null || arr2 == null){
+        if(!(arr1 == null || arr2 == null)){
             char[] union = new char[arr1.length + arr2.length];
             for(int i = 0; i < union.length; i++)
                 if(i < arr1.length){
@@ -173,7 +173,23 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        // Replace the following statement with your code
-        return 0;
+        int minStrLength = Math.min(str1.length(), str2.length());
+        for(int i = 0; i < minStrLength; i++){
+            if(str1.charAt(i) < str2.charAt(i)){
+                return -1;
+            }
+            if(str1.charAt(i) > str2.charAt(i)){
+                return 1;
+            }
+        }
+        if (str1.length() > str2.length()) {
+            return 1;
+        }
+        else if(str1.length() < str2.length()) {
+            return -1;
+        }
+        else{
+            return 0;
+        }
     }
 }

@@ -110,7 +110,7 @@ public class ArrCharOps {
                 union[j] = arr2[j - arr1.length];
         }
         return union;
-    }ד
+    }
 
     /** Returns a new array that can be described as a sub-array of this array.
      *  The sub-array begins at the specified beginIndex and extends to the character at index endIndex - 1.
